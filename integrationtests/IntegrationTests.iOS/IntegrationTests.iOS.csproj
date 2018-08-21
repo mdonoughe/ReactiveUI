@@ -67,7 +67,7 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="ReactiveUI">
-            <Version>8.0.0-alpha0136</Version>
+          <Version>8.7.1</Version>
         </PackageReference>
     </ItemGroup>
     <ItemGroup>

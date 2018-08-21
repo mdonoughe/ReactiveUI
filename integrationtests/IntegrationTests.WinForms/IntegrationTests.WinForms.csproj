@@ -87,10 +87,10 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ReactiveUI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReactiveUI.8.0.0-alpha0136\lib\net461\ReactiveUI.dll</HintPath>
+      <HintPath>..\packages\ReactiveUI.8.7.1\lib\net461\ReactiveUI.dll</HintPath>
     </Reference>
     <Reference Include="ReactiveUI.Winforms, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReactiveUI.WinForms.8.0.0-alpha0136\lib\net461\ReactiveUI.Winforms.dll</HintPath>
+      <HintPath>..\packages\ReactiveUI.WinForms.8.7.1\lib\net461\ReactiveUI.Winforms.dll</HintPath>
     </Reference>
     <Reference Include="Splat, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Splat.4.0.0\lib\net461\Splat.dll</HintPath>
