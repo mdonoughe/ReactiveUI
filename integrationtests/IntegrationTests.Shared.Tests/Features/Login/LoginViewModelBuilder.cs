@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reactive.Concurrency;
-using System.Text;
+﻿using System.Reactive.Concurrency;
 
 namespace IntegrationTests.Shared.Tests.Features.Login
 {
@@ -23,13 +20,11 @@ namespace IntegrationTests.Shared.Tests.Features.Login
 
         public LoginViewModel Build()
         {
-            var result = new LoginViewModel(_mainScheduler)
+            return new LoginViewModel(_mainScheduler)
             {
                 UserName = _userName,
                 Password = _password,
             };
-
-            return result;
         }
 
         public static implicit operator LoginViewModel(LoginViewModelBuilder builder) =>
