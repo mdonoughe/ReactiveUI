@@ -30,15 +30,14 @@ namespace IntegrationTests.Shared
 
             Login = ReactiveCommand.CreateFromObservable(
                 () =>
-                    Observable
-                        .StartAsync(LoginAsync)
+                    LoginAsync()
                         .TakeUntil(Cancel),
                 canLogin, _mainScheduler);
 
             Cancel = ReactiveCommand.Create(() => { }, Login.IsExecuting, _mainScheduler);
         }
 
-        public ReactiveCommand<Unit, bool?> Login { get; }
+        public ReactiveCommand<Unit, bool> Login { get; }
 
         public ReactiveCommand<Unit, Unit> Cancel { get; }
 
@@ -54,12 +53,9 @@ namespace IntegrationTests.Shared
             set => this.RaiseAndSetIfChanged(ref _password, value);
         }
 
-        private async Task<bool?> LoginAsync(CancellationToken ct)
+        private IObservable<bool> LoginAsync()
         {
-            var result = Password == "Mr. Goodbytes";
-            await Task.Delay(TimeSpan.FromSeconds(2), ct);
-
-            return result;
+            return Observable.Delay(Observable.Return(Password == "Mr. Goodbytes"), TimeSpan.FromSeconds(2), _mainScheduler);
         }
     }
 }
